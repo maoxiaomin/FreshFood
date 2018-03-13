@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>邮件发送成功</title>
+</head>
+<body>
+
+{% if email %}
+    <h1 style="text-align: center; margin-top: 100px">邮件已发送至{{ email }},请前往确认！</h1>
+    <h2 style="text-align: center; margin-top: 150px">正在跳转至登录页面。。。</h2>
+{% endif %}
+
+{% if msg %}
+    <h1 style="text-align: center; margin-top: 100px">{{ msg }}</h1>
+    <h2 style="text-align: center; margin-top: 150px">正在跳转至登录页面。。。</h2>
+{% endif %}
+
+
+
+<script>
+    window.setTimeout("window.location='{% url "user:login" %}'", 5000);
+</script>
+
+</body>
+</html>
